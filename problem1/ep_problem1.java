@@ -5,24 +5,26 @@ public class ep_problem1 {
 
 		long sum = 0;
 
-		int p = 1;
-		while (p * 3 < 1000){
-			sum += (p++ * 3);
-		}
-		System.out.println("Multiples of  3: p = " + p + ", sum = " + sum);
+		int max3 = 999 / 3;
+		int max5 = 999 / 5;
+		int max15 = 999 / 15;
 
-		p = 1;
-		while (p * 5 < 1000) {
-			sum += (p++ * 5);
+		for (int i = 1; i <= max15 ;  i++) {
+			// 5 + 3 - 15 = -7
+			sum += -7 * i;
 		}
-		System.out.println("Multiples of  5: p = " + p + ", sum = " + sum);
 
-		p = 1;
-		while (p * 15 < 1000) {
-			sum -= (p++ * 15);
+		for (int i = max15 +1; i <= max5 ;  i++) {
+			// 5 + 3
+			sum += 8 * i;
 		}
-		System.out.println("Multiples of 15: p = " + p + ", sum = " + sum);
+
+		for (int i = max5 + 1; i <= max3 ;  i++) {
+			// 3
+			sum += 3 * i;
+		}
 
 		System.out.println("Sum = " + sum);
 	}
+
 }

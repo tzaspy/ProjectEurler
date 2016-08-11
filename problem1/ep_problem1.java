@@ -1,30 +1,24 @@
 
 
 public class ep_problem1 {
-	public static void main(String[] args){
+	public static void main(String[] args) {
 
-		long sum = 0;
+		long sum;
 
-		int max3 = 999 / 3;
-		int max5 = 999 / 5;
-		int max15 = 999 / 15;
+		int n3 = 999 / 3;
+		int n5 = 999 / 5;
+		int n15 = 999 / 15;
 
-		for (int i = 1; i <= max15 ;  i++) {
-			// 5 + 3 - 15 = -7
-			sum += -7 * i;
-		}
-
-		for (int i = max15 +1; i <= max5 ;  i++) {
-			// 5 + 3
-			sum += 8 * i;
-		}
-
-		for (int i = max5 + 1; i <= max3 ;  i++) {
-			// 3
-			sum += 3 * i;
-		}
+		sum = computeS(n3, 3, 3) + 
+				computeS(n5, 5, 5) -
+				computeS(n15, 15, 15);
 
 		System.out.println("Sum = " + sum);
+		System.out.println("Sum = " + computeS(51, 7, 3));
 	}
 
+
+	static long computeS(int n, int a1, int i) {
+		return n * (2* a1 + (n -1) * i) / 2;
+	}
 }
